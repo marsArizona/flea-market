@@ -232,7 +232,7 @@ window.SHOP = {
    "name": "Behringer TD-3",
    "price": 1000,
    "condition": "Abierto Excelente.",
-   "sold": false,
+   "sold": true,
    "specs": [
     [
      "Tipo",
