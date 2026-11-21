@@ -1,0 +1,4 @@
+nombre: Gretsch G2220 Electromatic Junior Jet Bass II
+precio: 5000
+estado: 
+vendido: no

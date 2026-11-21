@@ -1,0 +1,4 @@
+nombre: Tascam US-2x2HR
+precio: 2300
+estado: 
+vendido: no

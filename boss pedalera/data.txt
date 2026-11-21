@@ -1,0 +1,4 @@
+nombre: Boss ME-80
+precio: 3800
+estado: 
+vendido: no

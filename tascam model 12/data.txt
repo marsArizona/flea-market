@@ -1,0 +1,4 @@
+nombre: Tascam Model 12
+precio: 10000
+estado: 
+vendido: no

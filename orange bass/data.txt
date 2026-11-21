@@ -1,0 +1,4 @@
+nombre: Amplificador Orange Crush Bass 100 (100W, 1x15")
+precio: 10000
+estado: 
+vendido: no

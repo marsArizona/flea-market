@@ -1,0 +1,375 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T00:54:47.015806+00:00",
+  "title": "Design System: Bastians Flea Market",
+  "extensions": {
+    "colorMeta": {
+      "aluminium-ground": {
+        "role": "neutral",
+        "displayName": "Aluminium Ground",
+        "canonical": "#cdcac2",
+        "tonalRamp": [
+          "#333230",
+          "#5c5b57",
+          "#85837e",
+          "#aeaca5",
+          "#d4d2cb",
+          "#e1dfda",
+          "#eeecea",
+          "#f8f7f6"
+        ]
+      },
+      "aluminium-highlight": {
+        "role": "neutral",
+        "displayName": "Aluminium Highlight",
+        "canonical": "#e1ded7",
+        "tonalRamp": [
+          "#383836",
+          "#656461",
+          "#92908c",
+          "#bfbdb7",
+          "#e6e3dd",
+          "#edebe7",
+          "#f4f3f1",
+          "#fafaf9"
+        ]
+      },
+      "aluminium-recess": {
+        "role": "neutral",
+        "displayName": "Aluminium Recess",
+        "canonical": "#b3afa6",
+        "tonalRamp": [
+          "#2d2c2a",
+          "#514f4b",
+          "#74726c",
+          "#98958d",
+          "#bebbb3",
+          "#d1cfca",
+          "#e4e3e0",
+          "#f4f3f2"
+        ]
+      },
+      "bay-back": {
+        "role": "neutral",
+        "displayName": "Bay Back",
+        "canonical": "#bebab1",
+        "tonalRamp": [
+          "#302e2c",
+          "#555450",
+          "#7c7973",
+          "#a29e96",
+          "#c8c4bd",
+          "#d8d6d0",
+          "#e8e7e4",
+          "#f5f5f3"
+        ]
+      },
+      "sumi-ink": {
+        "role": "neutral",
+        "displayName": "Sumi Ink",
+        "canonical": "#151514",
+        "tonalRamp": [
+          "#050505",
+          "#090909",
+          "#0e0e0d",
+          "#121211",
+          "#383837",
+          "#737372",
+          "#adadad",
+          "#dcdcdc"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "#47453f",
+        "tonalRamp": [
+          "#121110",
+          "#201f1c",
+          "#2e2d29",
+          "#3c3b36",
+          "#63615c",
+          "#918f8c",
+          "#bfbebc",
+          "#e3e3e2"
+        ]
+      },
+      "price-paper": {
+        "role": "neutral",
+        "displayName": "Price Paper",
+        "canonical": "#f6f5f2",
+        "tonalRamp": [
+          "#3e3d3c",
+          "#6f6e6d",
+          "#a09f9d",
+          "#d1d0ce",
+          "#f7f6f4",
+          "#faf9f7",
+          "#fcfcfa",
+          "#fefefd"
+        ]
+      },
+      "signal-orange": {
+        "role": "primary",
+        "displayName": "Signal Orange",
+        "canonical": "#ff5a1f",
+        "tonalRamp": [
+          "#401608",
+          "#73280e",
+          "#a63a14",
+          "#d94c1a",
+          "#ff7341",
+          "#ff9c79",
+          "#ffc5b1",
+          "#ffe6dd"
+        ]
+      },
+      "marker-orange": {
+        "role": "primary",
+        "displayName": "Marker Orange",
+        "canonical": "#c43d0b",
+        "tonalRamp": [
+          "#310f03",
+          "#581b05",
+          "#7f2807",
+          "#a73409",
+          "#cd5a30",
+          "#dc8b6d",
+          "#eabbaa",
+          "#f6e2da"
+        ]
+      },
+      "error-rust": {
+        "role": "error",
+        "displayName": "Error Rust",
+        "canonical": "#a8240a",
+        "tonalRamp": [
+          "#2a0902",
+          "#4c1004",
+          "#6d1706",
+          "#8f1f08",
+          "#b5452f",
+          "#cb7c6c",
+          "#e1b2a9",
+          "#f2deda"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Noren Display",
+        "purpose": "Noren shop name only; uppercase."
+      },
+      "headline": {
+        "displayName": "Sign Headline",
+        "purpose": "Counter board title and placard lead."
+      },
+      "title": {
+        "displayName": "Item Title",
+        "purpose": "Item name in the drawer."
+      },
+      "price": {
+        "displayName": "Marker Price",
+        "purpose": "Prices only, on strips (30px; 23px phones) and the drawer plaque (38px)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text, blurbs (18px, 46ch), conditions."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase tracked keys beside their values: spec rows, condition, shelf-sign Spanish labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "board",
+        "value": "0 10px 16px -8px rgb(0 0 0 / 0.45)",
+        "purpose": "Under each shelf board."
+      },
+      {
+        "name": "standing-item",
+        "value": "0 2px 0 rgb(0 0 0 / 0.25), 0 12px 20px -12px rgb(0 0 0 / 0.5)",
+        "purpose": "Photo resting on the board."
+      },
+      {
+        "name": "standing-item-lifted",
+        "value": "0 2px 0 rgb(0 0 0 / 0.25), 0 22px 26px -14px rgb(0 0 0 / 0.55)",
+        "purpose": "Photo lifted 6px on hover or while its drawer is open."
+      },
+      {
+        "name": "hanging-strip",
+        "value": "0 1px 0 rgb(0 0 0 / 0.15), 0 8px 12px -6px rgb(0 0 0 / 0.4)",
+        "purpose": "Price strips."
+      },
+      {
+        "name": "cloth",
+        "value": "0 14px 22px -14px rgb(0 0 0 / 0.55)",
+        "purpose": "Noren panels."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 3px solid #151514; outline-offset: 3px",
+        "purpose": "Global focus-visible; fields use 0 0 0 3px #ff5a1f instead."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All physical motion."
+      },
+      {
+        "name": "noren-sway",
+        "value": "2.4s, panels staggered 0.12s",
+        "purpose": "Once on load; off under reduced motion."
+      },
+      {
+        "name": "tag-swing",
+        "value": "0.9s",
+        "purpose": "Price strip swing on hover (hover-capable, motion allowed)."
+      },
+      {
+        "name": "drawer-slide",
+        "value": "grid-template-rows 0fr to 1fr, 0.7s",
+        "purpose": "Drawer pulling out under its shelf."
+      },
+      {
+        "name": "item-lift",
+        "value": "translateY(-6px), 0.5s",
+        "purpose": "Photo lift on hover/open."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "max-width: 760px"
+      },
+      {
+        "name": "two-column-cabinet",
+        "value": "min-width: 1180px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "WhatsApp Button",
+      "kind": "button",
+      "refersTo": "button-whatsapp",
+      "description": "Primary action; first button in every drawer and in the footer counter.",
+      "html": "<a class=\"ds-btn-wa\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linejoin=\"round\"/></svg><span>Apartar por WhatsApp</span></a>",
+      "css": ".ds-btn-wa{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 22px;border:2px solid #151514;border-radius:6px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;font-weight:700;font-size:17px;line-height:1.2;cursor:pointer;transition:background-color .2s,color .2s,translate .15s} .ds-btn-wa:active{translate:0 2px} .ds-btn-wa:focus-visible{outline:3px solid #151514;outline-offset:3px} .ds-btn-wa{background:#ff5a1f;color:#151514;text-decoration:none} .ds-btn-wa:hover{background:#151514;color:#ff5a1f}"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "Form submit on paper or grey grounds.",
+      "html": "<button class=\"ds-btn-ink\">Enviar mensaje</button>",
+      "css": ".ds-btn-ink{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 22px;border:2px solid #151514;border-radius:6px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;font-weight:700;font-size:17px;line-height:1.2;cursor:pointer;transition:background-color .2s,color .2s,translate .15s} .ds-btn-ink:active{translate:0 2px} .ds-btn-ink:focus-visible{outline:3px solid #151514;outline-offset:3px} .ds-btn-ink{background:#151514;color:#f6f5f2} .ds-btn-ink:hover{background:#ff5a1f;color:#151514}"
+    },
+    {
+      "name": "Paper Button",
+      "kind": "button",
+      "refersTo": "button-paper",
+      "description": "Form submit on the black counter board.",
+      "html": "<div style=\"background:#151514;padding:24px\"><button class=\"ds-btn-paper\">Enviar mensaje</button></div>",
+      "css": ".ds-btn-paper{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:12px 22px;border:2px solid #151514;border-radius:6px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;font-weight:700;font-size:17px;line-height:1.2;cursor:pointer;transition:background-color .2s,color .2s,translate .15s} .ds-btn-paper:active{translate:0 2px} .ds-btn-paper:focus-visible{outline:3px solid #151514;outline-offset:3px} .ds-btn-paper{background:#f6f5f2;color:#151514;border-color:#f6f5f2} .ds-btn-paper:hover{background:#ff5a1f;border-color:#ff5a1f} .ds-btn-paper:focus-visible{outline-color:#f6f5f2}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field-input",
+      "description": "Message form field with bold label above.",
+      "html": "<label class=\"ds-field\"><span>Tu nombre</span><input></label>",
+      "css": ".ds-field{display:grid;gap:5px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif;max-width:320px} .ds-field span{font-size:13px;font-weight:700;color:#47453f} .ds-field input{padding:11px 12px;border:2px solid #151514;border-radius:4px;background:#fff;font:inherit;font-size:16px;caret-color:#c43d0b} .ds-field input:focus-visible{outline:none;box-shadow:0 0 0 3px #ff5a1f}"
+    },
+    {
+      "name": "Shelf with Price Strip",
+      "kind": "custom",
+      "refersTo": "price-strip",
+      "description": "Signature: black sign column, grey bay, item standing on the orange board, pinned paper strip hanging below.",
+      "html": "<div class=\"ds-shelf\"><div class=\"ds-sign\"><span class=\"ds-kanji\">弾</span><span class=\"ds-lab\">Para tocar</span></div><div class=\"ds-bay\"><div class=\"ds-photo\"></div><div class=\"ds-rail\"></div><div class=\"ds-tag\"><b>Boss ME-80</b><span class=\"ds-price\">$3,800<small>MXN</small></span></div></div></div>",
+      "css": ".ds-shelf{display:grid;grid-template-columns:60px 1fr;border-top:12px solid #151514;border-right:12px solid #151514;max-width:420px;font-family:'Zen Kaku Gothic New',system-ui,sans-serif} .ds-sign{display:flex;gap:14px;padding:18px 0;align-items:center;background:#151514;color:#f6f5f2;writing-mode:vertical-rl} .ds-kanji{font-family:'Dela Gothic One',sans-serif;font-size:30px;line-height:1} .ds-lab{font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#ff5a1f} .ds-bay{background:#bebab1 linear-gradient(180deg,rgb(0 0 0/.12),transparent 40px);padding:26px 24px 28px} .ds-photo{position:relative;z-index:2;width:180px;height:140px;margin-bottom:-4px;background:#b3afa6;box-shadow:0 2px 0 rgb(0 0 0/.25),0 12px 20px -12px rgb(0 0 0/.5);transition:transform .5s cubic-bezier(.16,1,.3,1)} .ds-bay:hover .ds-photo{transform:translateY(-6px)} .ds-rail{height:24px;margin:0 -24px;background:#ff5a1f;border-top:6px solid #e1ded7;box-shadow:0 10px 16px -8px rgb(0 0 0/.45)} .ds-tag{position:relative;z-index:3;display:inline-grid;min-width:132px;margin:-10px 0 0 10px;padding:14px 14px 10px;background:#f6f5f2;color:#151514;font-size:15px;box-shadow:0 1px 0 rgb(0 0 0/.15),0 8px 12px -6px rgb(0 0 0/.4);transform:rotate(-1.5deg);transform-origin:50% 0} .ds-tag::before{content:'';position:absolute;top:5px;left:50%;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:#151514} .ds-price{color:#c43d0b;font-family:'Yusei Magic',sans-serif;font-size:30px;line-height:1.1;font-variant-numeric:tabular-nums} .ds-price small{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:13px;margin-left:3px;color:#47453f}"
+    },
+    {
+      "name": "Hanko (sold stamp)",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Orange 売約済 stamp over a sold item's photo.",
+      "html": "<div class=\"ds-hanko\"><span class=\"ds-hj\">売約済</span><span class=\"ds-he\">VENDIDO</span></div>",
+      "css": ".ds-hanko{display:grid;place-items:center;align-content:center;width:108px;aspect-ratio:1;rotate:-14deg;border:4px solid #ff5a1f;border-radius:50%;background:rgb(246 245 242/.86);color:#c43d0b;text-align:center} .ds-hj{font-family:'Dela Gothic One',sans-serif;font-size:26px;line-height:1} .ds-he{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:11px;letter-spacing:.2em;margin-top:4px}"
+    },
+    {
+      "name": "Drawer Price Plaque",
+      "kind": "chip",
+      "refersTo": "drawer-price",
+      "description": "Tilted orange price plaque in the open drawer.",
+      "html": "<p class=\"ds-plaque\">$10,000<small>MXN</small></p>",
+      "css": ".ds-plaque{display:inline-block;margin:0;padding:4px 16px 6px;background:#ff5a1f;color:#151514;font-family:'Yusei Magic',sans-serif;font-size:38px;line-height:1.1;font-variant-numeric:tabular-nums;rotate:-1.5deg} .ds-plaque small{font-family:'Zen Kaku Gothic New',sans-serif;font-weight:700;font-size:14px;margin-left:4px}"
+    },
+    {
+      "name": "Noren Header",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Black cloth panels on a grey rod carrying the shop name; sways once on load.",
+      "html": "<div class=\"ds-noren\"><div class=\"ds-rod\"></div><div class=\"ds-cloth\"><div class=\"ds-panel\">Bastians</div><div class=\"ds-panel\"><span class=\"ds-mon\">市</span>Flea</div><div class=\"ds-panel\">Market</div></div></div>",
+      "css": ".ds-rod{height:12px;background:#8e8a82;border-bottom:3px solid #151514;box-shadow:inset 0 3px 0 #a9a59d} .ds-cloth{display:grid;grid-template-columns:1.25fr 1fr 1.15fr;gap:7px} .ds-panel{display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.35em;min-height:116px;padding:22px 10px 18px;background:#151514;color:#f6f5f2;font-family:'Dela Gothic One',sans-serif;font-size:28px;line-height:1;text-transform:uppercase;transform-origin:50% 0;box-shadow:0 14px 22px -14px rgb(0 0 0/.55)} .ds-mon{display:grid;place-items:center;width:1.65em;aspect-ratio:1;border-radius:50%;background:#ff5a1f;color:#151514}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Provincial Dagashi-ya",
+    "overview": "The page is a small Japanese curiosity shop seen straight on. A black noren hangs over the door; behind it stands a black-framed cabinet of shelves, each bay a recessed grey back panel with an orange-edged board running across it. Every item is a real, uncropped photo standing on that board, and a white paper price strip, pinned through the top and lettered in orange marker, hangs off the board edge at a slight tilt. Nothing is a card; everything is furniture.\n\nThe palette is borrowed from Teenage Engineering hardware (warm aluminium grey, signal orange, black, white) and applied as shop materials: aluminium for the ground, black lacquer for uprights, signs and noren, orange for the board edges and stamps, paper for strips and the drawer body. Density is shop-like: items sit at their own aspect ratio and width, not in equal cells. Detail lives in a drawer that slides out from under the shelf, not on a separate page.\n\nMotion is physical and sparse: the noren sways once on load, price strips swing on hover, the drawer pulls out with a long exponential ease-out.",
+    "keyCharacteristics": [
+      "Black cabinet frame (12px uprights) around grey bays with an orange shelf board.",
+      "Hanging paper price strips, pinned, tilted per item, prices in Yusei Magic marker.",
+      "Vertical single-kanji shelf-end signs in Dela Gothic One with a Spanish label.",
+      "Orange hanko 売約済 stamped over sold items.",
+      "Detail drawer opens inline under the shelf; no modal, no separate product page.",
+      "Real photos at native aspect ratio; never cropped into uniform tiles on the shelf."
+    ],
+    "rules": [
+      {
+        "name": "The Shop Materials Rule",
+        "body": "Every color is a material in the shop: aluminium, lacquer, paper, orange paint. A new surface picks the material it would be made of, not a new tint.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Oranges Rule",
+        "body": "Signal orange fills and strokes; marker orange is the only orange used for text on paper or grey. Orange text on black may use signal orange (noren kanji, shelf labels).",
+        "section": "colors"
+      },
+      {
+        "name": "The Marker Is For Money Rule",
+        "body": "Yusei Magic sets prices and nothing else.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sign Kanji Rule",
+        "body": "Shelf-end signs carry one kanji each (弾 作 録 聴), vertical, Dela Gothic One. Drop okurigana: at sign scale く reads as an arrow.",
+        "section": "typography"
+      },
+      {
+        "name": "The Gravity Rule",
+        "body": "A shadow falls downward from something that rests or hangs. Nothing floats.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do frame every new display surface as shop furniture: black uprights, grey bay, orange-edged board.",
+      "Do show each item's real photo at its native aspect ratio standing on the board.",
+      "Do hang prices on paper strips in Yusei Magic, marker orange, with tabular numerals.",
+      "Do mark sold goods with the orange 売約済 hanko and a struck-through price, and hide purchase actions.",
+      "Do keep WhatsApp as the first, orange action wherever an item can be contacted about.",
+      "Do use the exponential ease-out (cubic-bezier(0.16, 1, 0.3, 1)) for physical motion, and drop sway and swing under reduced motion."
+    ],
+    "donts": [
+      "Don't put items in equal rounded cards or a uniform crop grid.",
+      "Don't set orange text on aluminium or paper in signal orange; use marker orange.",
+      "Don't use Yusei Magic for anything but prices.",
+      "Don't round structural surfaces; radius belongs to controls only.",
+      "Don't add Teenage Engineering logos or branding; the palette is inspiration only.",
+      "Don't make shelves scroll sideways on phones; stack boards of two items each."
+    ]
+  }
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bastians Flea Market</title>
+  <meta name="description" content="Equipo de audio y música de mi estudio, a la venta. Bajos, amplis, sintes, grabadoras y audífonos. Precios en pesos, se aparta por WhatsApp.">
+  <meta name="theme-color" content="#151514">
+  <!-- Vista previa al compartir (WhatsApp, Facebook, X). build.py completa las URLs con SITE_URL. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Bastians Flea Market">
+  <meta property="og:title" content="Bastians Flea Market">
+  <meta property="og:description" content="Equipo de audio y música de mi estudio, a la venta. Bajos, amplis, sintes, grabadoras y audífonos desde $1,000.">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Repisa de Bastians Flea Market con un bajo, una MPC, una consola, audífonos y un sinte">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23151514'/%3E%3Crect x='3' y='5' width='7' height='20' fill='%23f6f5f2'/%3E%3Crect x='12.5' y='5' width='7' height='20' fill='%23f6f5f2'/%3E%3Crect x='22' y='5' width='7' height='20' fill='%23f6f5f2'/%3E%3Ccircle cx='16' cy='14' r='4' fill='%23ff5a1f'/%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/dela-gothic-one-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="noren" aria-label="Bastians Flea Market">
+    <div class="noren-rod" aria-hidden="true"></div>
+    <div class="noren-cloth">
+      <div class="noren-panel"><span class="noren-word">Bastians</span></div>
+      <div class="noren-panel noren-panel--mon">
+        <span class="mon" aria-hidden="true">市</span>
+        <span class="noren-word">Flea</span>
+      </div>
+      <div class="noren-panel">
+        <span class="noren-jp" aria-hidden="true">蚤の市</span>
+        <span class="noren-word">Market</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="placard">
+    <p class="placard-lead">Equipo de audio y música de mi estudio, a la venta.</p>
+    <p class="placard-how">Toca cualquier artículo para ver fotos, ficha y estado. Precios en pesos mexicanos. <span id="stock-count"></span></p>
+  </div>
+
+  <main id="shop" class="cabinet" aria-label="Repisas">
+    <noscript><p class="noscript">Activa JavaScript para ver los artículos.</p></noscript>
+  </main>
+
+  <footer class="counter">
+    <div class="counter-board">
+      <p class="counter-title">Pregunta por lo que sea</p>
+      <p class="counter-text">Todo lo de las repisas está disponible hasta que lleve el sello <span class="mini-hanko" aria-hidden="true">売約済</span> vendido.</p>
+      <a class="btn btn-wa" id="footer-wa" href="#" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.4.7 1.4 1.8 2.6 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.4-1 1.8-.7.4-1.8.4-3.3-.3-1.9-.9-3.3-2.6-3.9-3.7-.7-1.2-.6-2.3 0-3Z" fill="currentColor"/></svg>
+        <span>WhatsApp <span id="footer-wa-number"></span></span>
+      </a>
+      <form class="note note--counter" id="counter-form" novalidate>
+        <p class="note-title">O déjame un mensaje aquí</p>
+        <div class="note-row">
+          <label class="field"><span>Tu nombre</span><input name="name" autocomplete="name" required></label>
+          <label class="field"><span>WhatsApp o correo</span><input name="contact" autocomplete="email" required></label>
+        </div>
+        <label class="field"><span>Mensaje</span><textarea name="message" rows="3" required placeholder="¿Qué buscas o qué quieres preguntar?"></textarea></label>
+        <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="note-foot">
+          <button class="btn btn-paper" type="submit">Enviar mensaje</button>
+          <p class="note-status" role="status" aria-live="polite"></p>
+        </div>
+      </form>
+      <p class="counter-updated">Repisas actualizadas el <time id="updated"></time></p>
+    </div>
+  </footer>
+
+  <template id="tpl-drawer">
+    <div class="drawer-inner">
+      <div class="drawer-face" aria-hidden="true"><span class="drawer-pull"></span></div>
+      <div class="drawer-body">
+        <div class="gallery">
+          <figure class="gallery-main"></figure>
+          <div class="gallery-thumbs" role="group" aria-label="Fotos"></div>
+        </div>
+        <div class="sheet">
+          <h2 class="sheet-name" tabindex="-1"></h2>
+          <div class="sheet-meta">
+            <p class="sheet-price"></p>
+            <p class="sheet-condition"></p>
+          </div>
+          <p class="sheet-sold">Este ya se vendió. Escríbeme si buscas algo parecido.</p>
+          <p class="sheet-blurb"></p>
+          <table class="specs"><caption class="visually-hidden">Ficha técnica</caption><tbody></tbody></table>
+          <div class="sheet-actions">
+            <a class="btn btn-wa sheet-wa" target="_blank" rel="noopener">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2a8.8 8.8 0 0 0-7.6 13.2L3.2 20.8l4.5-1.2A8.8 8.8 0 1 0 12 3.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.6c.2-.4.5-.4.7-.4h.5c.2 0 .4 0 .5.4l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.1-.2.3 0 .5.4.7 1.4 1.8 2.6 2.3.2.1.4.1.5-.1l.6-.7c.2-.2.4-.2.6-.1l1.6.8c.2.1.3.2.3.4 0 .5-.2 1.4-1 1.8-.7.4-1.8.4-3.3-.3-1.9-.9-3.3-2.6-3.9-3.7-.7-1.2-.6-2.3 0-3Z" fill="currentColor"/></svg>
+              <span>Apartar por WhatsApp</span>
+            </a>
+          </div>
+          <form class="note" novalidate>
+            <p class="note-title">O déjame un mensaje</p>
+            <div class="note-row">
+              <label class="field"><span>Tu nombre</span><input name="name" autocomplete="name" required></label>
+              <label class="field"><span>WhatsApp o correo</span><input name="contact" autocomplete="email" required></label>
+            </div>
+            <label class="field"><span>Mensaje</span><textarea name="message" rows="3" required></textarea></label>
+            <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <div class="note-foot">
+              <button class="btn btn-ink" type="submit">Enviar mensaje</button>
+              <p class="note-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <button class="drawer-close" type="button">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15l6-6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="square"/></svg>
+        <span>Cerrar cajón</span>
+      </button>
+    </div>
+  </template>
+
+  <script src="config.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

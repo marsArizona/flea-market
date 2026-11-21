@@ -1,0 +1,4 @@
+nombre: Akai MPC One
+precio: 4000
+estado: 
+vendido: no

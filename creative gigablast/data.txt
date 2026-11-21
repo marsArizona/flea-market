@@ -1,0 +1,4 @@
+nombre: Creative Labs GigaWorks T40 Series II
+precio: 2000
+estado: 
+vendido: no

@@ -1,0 +1,4 @@
+nombre: Behringer TD-3
+precio: 1000
+estado: 
+vendido: no
