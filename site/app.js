@@ -229,6 +229,7 @@
     showPhoto(p, 0);
 
     $(".sheet-wa").href = waLink(waMessage(p));
+    shareStatus.textContent = "";
     drawer.classList.toggle("is-sold", p.sold);
 
     form.reset();
@@ -307,6 +308,26 @@
   });
 
   $(".drawer-close").addEventListener("click", close);
+
+  // Compartir: apunta a /p/<slug>/, que trae la vista previa del producto para WhatsApp.
+  const shareStatus = $(".share-status");
+  $(".sheet-share").addEventListener("click", async () => {
+    const p = shop.products.find((x) => x.slug === current);
+    if (!p) return;
+    const url = new URL(`p/${p.slug}/`, location.href.split("#")[0]).href;
+    const text = `${p.brand} ${p.model} — ${priceText(p.price)} MXN en ${cfg.name || "Bastians Flea Market"}`;
+    shareStatus.textContent = "";
+    if (navigator.share) {
+      try { await navigator.share({ title: text, text, url }); } catch (_) {}
+      return;
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      shareStatus.textContent = "Link copiado. Pégalo en WhatsApp.";
+    } catch (_) {
+      shareStatus.textContent = url;
+    }
+  });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && current && drawer.contains(document.activeElement)) close();
   });

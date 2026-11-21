@@ -637,7 +637,13 @@ button, input, textarea { font: inherit; color: inherit; }
 
 .specs td { font-size: 15px; }
 
-.sheet-actions { margin-top: 26px; }
+.sheet-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 26px; }
+
+.btn-line { background: transparent; color: var(--ink); }
+.btn-line:hover { background: var(--ink); color: var(--paper); }
+
+.share-status { flex-basis: 100%; margin: 0; font-size: 14px; font-weight: 700; }
+.share-status:empty { display: none; }
 
 .sheet-sold {
   display: none;
@@ -842,5 +848,5 @@ button, input, textarea { font: inherit; color: inherit; }
 
   .drawer-body { grid-template-columns: minmax(0, 1fr); }
   .note-row { grid-template-columns: 1fr; }
-  .sheet-actions .btn { width: 100%; }
+  .sheet-actions .btn-wa { width: 100%; }
 }

@@ -8,14 +8,14 @@ Uso:  python3 build.py
 
 Edita data.txt (precio, estado, vendido) en cada carpeta y vuelve a correrlo.
 """
-import json, os, re, shutil, subprocess, unicodedata
+import html, json, os, re, shutil, subprocess, tempfile, unicodedata
 from datetime import date
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # URL pública del sitio, con / al final (ej. "https://bastians.netlify.app/").
 # WhatsApp necesita la URL completa para mostrar la imagen al compartir.
-SITE_URL = ""
+SITE_URL = "https://bastianfleamarket.netlify.app/"
 SITE = os.path.join(ROOT, "site")
 
 # Repisas en orden de aparición.
@@ -134,9 +134,98 @@ def main():
         f.write("// Generado por build.py — no editar a mano.\nwindow.SHOP = ")
         json.dump(payload, f, ensure_ascii=False, indent=1)
         f.write(";\n")
-    embed_provenance(img_root)
+    write_share_cards(products)
+    write_product_pages(products)
+    embed_provenance(img_root, ORIGIN)
+    embed_provenance(os.path.join(SITE, "share"), CARD_ORIGIN)
     set_share_urls()
     print(f"Listo: {len(products)} productos → site/data.js")
+
+
+def write_share_cards(products):
+    """Imagen 1200x630 por producto (site/share/<slug>.jpg) a partir de tools/share-card.html.
+    Requiere la herramienta de capturas; si no está, se usa la foto principal."""
+    out = os.path.join(SITE, "share")
+    shutil.rmtree(out, ignore_errors=True)
+    if not os.path.exists(IMPECCABLE):
+        print("  ! sin herramienta de capturas: las páginas usarán la foto principal")
+        return
+    os.makedirs(out)
+    tpl = "file://" + os.path.join(ROOT, "tools", "share-card.html")
+    with tempfile.TemporaryDirectory() as tmp:
+        for p in products:
+            d = os.path.join(tmp, p["slug"])
+            subprocess.run([IMPECCABLE, "shot", f"{tpl}?slug={p['slug']}", "--viewport", "1200x630", "--out", d],
+                           capture_output=True)
+            png = os.path.join(d, "1200x630.png")
+            if os.path.exists(png):
+                subprocess.run(["sips", "-s", "format", "jpeg", "-s", "formatOptions", "82", png,
+                                "--out", os.path.join(out, p["slug"] + ".jpg")], capture_output=True)
+    print(f"  ✓ {len(os.listdir(out))} imágenes para compartir")
+
+
+def money(n):
+    return "Pregunta" if n is None else "${:,}".format(n)
+
+
+def write_product_pages(products):
+    """site/p/<slug>/index.html: página ligera con la vista previa del producto que redirige al cajón."""
+    root = os.path.join(SITE, "p")
+    shutil.rmtree(root, ignore_errors=True)
+    base = SITE_URL.rstrip("/") + "/" if SITE_URL else "../../"
+    for p in products:
+        slug = p["slug"]
+        title = f"{p['brand']} {p['model']} · {money(p['price'])} MXN" + (" · VENDIDO" if p["sold"] else "")
+        desc = p["blurb"]
+        if p["sold"]:
+            desc = "Ya se vendió. " + desc
+        elif p["condition"]:
+            desc = f"Estado: {p['condition'].rstrip('.')}. {desc}"
+        if len(desc) > 200:
+            desc = desc[:197].rsplit(" ", 1)[0] + "…"
+        card = os.path.join(SITE, "share", slug + ".jpg")
+        if os.path.exists(card):
+            image, w, h = f"share/{slug}.jpg", 1200, 630
+        else:
+            ph = p["photos"][0]
+            image, w, h = ph["src"], ph["w"], ph["h"]
+        page_url = f"{base}p/{slug}/" if SITE_URL else ""
+        target = f"../../#{slug}"
+        e = lambda v: html.escape(str(v), quote=True)
+        doc = f"""<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{e(title)} — Bastians Flea Market</title>
+  <meta name="description" content="{e(desc)}">
+  <meta property="og:type" content="product">
+  <meta property="og:locale" content="es_MX">
+  <meta property="og:site_name" content="Bastians Flea Market">
+  <meta property="og:title" content="{e(title)}">
+  <meta property="og:description" content="{e(desc)}">
+  <meta property="og:url" content="{e(page_url)}">
+  <meta property="og:image" content="{e(base + image)}">
+  <meta property="og:image:width" content="{w}">
+  <meta property="og:image:height" content="{h}">
+  <meta property="og:image:alt" content="{e(p['name'])}">
+  <meta property="product:price:amount" content="{p['price'] or ''}">
+  <meta property="product:price:currency" content="MXN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="robots" content="noindex, follow">
+  <meta http-equiv="refresh" content="0; url={e(target)}">
+  <link rel="canonical" href="{e((base if SITE_URL else '../../') + '#' + slug)}">
+  <script>location.replace({json.dumps(target)});</script>
+</head>
+<body style="background:#cdcac2;color:#151514;font:16px system-ui,sans-serif;padding:24px">
+  <p><a href="{e(target)}" style="color:inherit">Ver {e(p['name'])} en Bastians Flea Market</a></p>
+</body>
+</html>
+"""
+        os.makedirs(os.path.join(root, slug), exist_ok=True)
+        with open(os.path.join(root, slug, "index.html"), "w", encoding="utf-8") as f:
+            f.write(doc)
+    print(f"  ✓ {len(products)} páginas para compartir en site/p/")
 
 
 def set_share_urls():
@@ -158,13 +247,17 @@ ORIGIN = ("Origin: owner's own photo of the actual unit for sale, taken in the o
           "copied unmodified from the product folder by build.py. Not generated.")
 
 
-def embed_provenance(img_root):
+CARD_ORIGIN = ("Origin: share card rendered by build.py from tools/share-card.html (site CSS + the owner's own "
+               "product photo), screenshotted at 1200x630 and converted to JPEG. Not AI-generated.")
+
+
+def embed_provenance(img_root, origin):
     """Marca el origen de cada foto (opcional; solo si la herramienta está instalada)."""
     if not os.path.exists(IMPECCABLE):
         return
     for d, _, files in os.walk(img_root):
         for f in files:
-            subprocess.run([IMPECCABLE, "embed-prompt", os.path.join(d, f), "--prompt", ORIGIN],
+            subprocess.run([IMPECCABLE, "embed-prompt", os.path.join(d, f), "--prompt", origin],
                            capture_output=True)
 
 
