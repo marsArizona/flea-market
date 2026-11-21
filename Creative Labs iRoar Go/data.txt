@@ -1,0 +1,4 @@
+nombre: Creative Labs iRoar Go
+precio: 1000
+estado: Abierto, usos contados
+vendido: no

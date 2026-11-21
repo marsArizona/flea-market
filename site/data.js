@@ -1,6 +1,6 @@
 // Generado por build.py — no editar a mano.
 window.SHOP = {
- "updated": "2026-11-20",
+ "updated": "2026-11-21",
  "shelves": [
   {
    "id": "tocar",
@@ -511,6 +511,146 @@ window.SHOP = {
      "src": "img/creative-gigaworks-t40-ii/2.jpg",
      "w": 1024,
      "h": 768
+    }
+   ]
+  },
+  {
+   "slug": "apple-airpods-max",
+   "shelf": "escuchar",
+   "brand": "Apple",
+   "model": "AirPods Max",
+   "name": "AirPods Max",
+   "price": 3500,
+   "condition": "Abiertos, usos contados",
+   "sold": false,
+   "specs": [
+    [
+     "Tipo",
+     "Audífonos over-ear inalámbricos Bluetooth"
+    ],
+    [
+     "Audio",
+     "Driver dinámico de 40 mm, audio espacial con seguimiento de cabeza"
+    ],
+    [
+     "Ruido",
+     "Cancelación activa de ruido y modo ambiente"
+    ],
+    [
+     "Chip",
+     "Apple H1 en cada copa: cambio automático entre tus dispositivos Apple"
+    ],
+    [
+     "Batería",
+     "Hasta 20 h con cancelación de ruido activa"
+    ]
+   ],
+   "blurb": "Aluminio, malla tejida y cancelación de ruido de primera. Los over-ear de Apple, con audio espacial y su funda Smart Case.",
+   "photos": [
+    {
+     "src": "img/apple-airpods-max/1.jpg",
+     "w": 768,
+     "h": 1024
+    },
+    {
+     "src": "img/apple-airpods-max/2.jpg",
+     "w": 768,
+     "h": 1024
+    },
+    {
+     "src": "img/apple-airpods-max/3.jpg",
+     "w": 768,
+     "h": 1024
+    }
+   ]
+  },
+  {
+   "slug": "bang-olufsen-beoplay-h4",
+   "shelf": "escuchar",
+   "brand": "Bang & Olufsen",
+   "model": "Beoplay H4",
+   "name": "Bang & Olufsen Beoplay H4",
+   "price": 2000,
+   "condition": "Abierto",
+   "sold": false,
+   "specs": [
+    [
+     "Tipo",
+     "Audífonos over-ear inalámbricos Bluetooth 4.2"
+    ],
+    [
+     "Driver",
+     "Electrodinámico de 40 mm, 20 Ω"
+    ],
+    [
+     "Códecs",
+     "SBC, AAC y aptX"
+    ],
+    [
+     "Batería",
+     "Hasta 19 h, carga completa en unas 2.5 h"
+    ],
+    [
+     "Materiales",
+     "Piel de cordero, aluminio y almohadillas de espuma viscoelástica"
+    ]
+   ],
+   "blurb": "Diseño danés de B&O: piel, aluminio y un sonido cálido y detallado. Ligeros, inalámbricos y con 19 horas de batería.",
+   "photos": [
+    {
+     "src": "img/bang-olufsen-beoplay-h4/1.jpg",
+     "w": 768,
+     "h": 1024
+    },
+    {
+     "src": "img/bang-olufsen-beoplay-h4/2.jpg",
+     "w": 768,
+     "h": 1024
+    }
+   ]
+  },
+  {
+   "slug": "creative-iroar-go",
+   "shelf": "escuchar",
+   "brand": "Creative",
+   "model": "iRoar Go",
+   "name": "Creative Labs iRoar Go",
+   "price": 1000,
+   "condition": "Abierto, usos contados",
+   "sold": false,
+   "specs": [
+    [
+     "Tipo",
+     "Bocina Bluetooth portátil"
+    ],
+    [
+     "Drivers",
+     "5: subwoofer de 2.5\", 2 drivers de agudos de 1.5\" y 2 radiadores pasivos"
+    ],
+    [
+     "Resistencia",
+     "IPX6, aguanta salpicaduras"
+    ],
+    [
+     "Batería",
+     "Hasta 12 h; también carga tu celular por USB"
+    ],
+    [
+     "Extras",
+     "Reproduce microSD (hasta 32 GB) y memorias USB"
+    ]
+   ],
+   "blurb": "Cabe en la mochila y suena como bocina grande: 5 drivers con subwoofer, resistente a salpicaduras y 12 horas de batería.",
+   "photos": [
+    {
+     "src": "img/creative-iroar-go/1.jpg",
+     "w": 768,
+     "h": 1024
+    },
+    {
+     "src": "img/creative-iroar-go/2.jpg",
+     "w": 768,
+     "h": 1024
     }
    ]
   }

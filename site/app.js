@@ -115,7 +115,9 @@
       sign.append(kanji, el("span", "shelf-sign-label", s.label));
 
       const bay = el("div", "bay");
-      (compact ? chunk(items, 2) : [items]).forEach((group) => {
+      // phones: two per board; desktop: at most four per board, split evenly (6 → 3 + 3)
+      const perBoard = compact ? 2 : Math.ceil(items.length / Math.ceil(items.length / 4));
+      chunk(items, perBoard).forEach((group) => {
         const row = el("ul", "row");
         row.setAttribute("role", "list");
         const spacer = compact ? "12px" : "minmax(18px, 1fr)";

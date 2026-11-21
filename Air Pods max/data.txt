@@ -1,0 +1,4 @@
+nombre: AirPods Max
+precio: 3500
+estado: Abiertos, usos contados
+vendido: no

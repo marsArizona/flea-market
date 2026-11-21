@@ -38,6 +38,9 @@ CATALOG = {
     "dyson headphones":   ("escuchar", "Dyson",     "Zone",               "747FD38A", []),
     "meters headphone":   ("escuchar", "Meters",    "OV-1-B Connect",     "DBBE6705", []),
     "creative gigablast": ("escuchar", "Creative",  "GigaWorks T40 II",   "065E28D5", []),
+    "Air Pods max":       ("escuchar", "Apple",     "AirPods Max",        "1F9F72EB", []),
+    "bang & olufsen":     ("escuchar", "Bang & Olufsen", "Beoplay H4",    "F526576B", []),
+    "Creative Labs iRoar Go": ("escuchar", "Creative", "iRoar Go",        "69044289", []),
 }
 
 YES = {"si", "sí", "yes", "true", "1", "vendido", "x"}
