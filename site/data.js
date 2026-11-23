@@ -1,6 +1,6 @@
 // Generado por build.py — no editar a mano.
 window.SHOP = {
- "updated": "2026-11-21",
+ "updated": "2026-11-23",
  "shelves": [
   {
    "id": "tocar",
@@ -615,7 +615,7 @@ window.SHOP = {
    "brand": "Creative",
    "model": "iRoar Go",
    "name": "Creative Labs iRoar Go",
-   "price": 1000,
+   "price": 1500,
    "condition": "Abierto, usos contados",
    "sold": false,
    "specs": [
